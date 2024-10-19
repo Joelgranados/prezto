@@ -40,8 +40,9 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'history-substring-search' \
   'prompt' \
-  'fzf' \
   'git'
+
+zstyle ':prezto:module:fzf' fzf-command 'fzf'
 
 #
 # Autosuggestions
