@@ -14,3 +14,5 @@ alias b4="${ZDOTDIR:-$HOME}/src/b4/b4.sh"
 
 source /run/current-system/sw/share/fzf/key-bindings.zsh
 source /run/current-system/sw/share/fzf/completion.zsh
+eval "$(direnv hook zsh)"
+
