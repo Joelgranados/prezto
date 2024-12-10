@@ -1,18 +1,16 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-alias b4="${ZDOTDIR:-$HOME}/src/b4/b4.sh"
+if [[ -f "${ZDOTDIR:-$HOME}/src/b4/b4.sh" ]]; then
+  alias b4="${ZDOTDIR:-$HOME}/src/b4/b4.sh"
+fi
 
-source /run/current-system/sw/share/fzf/key-bindings.zsh
-source /run/current-system/sw/share/fzf/completion.zsh
-eval "$(direnv hook zsh)"
+if [[ -f "/etc/os-release" && $(cat "/etc/os-release" | grep "ID=nixos") ]]; then
+  source /run/current-system/sw/share/fzf/key-bindings.zsh
+  source /run/current-system/sw/share/fzf/completion.zsh
+  eval "$(direnv hook zsh)"
+fi
+
 
